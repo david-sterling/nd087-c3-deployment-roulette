@@ -1,0 +1,12 @@
+[david@fedora solution]$ kubectl get pods
+NAME                           READY   STATUS    RESTARTS   AGE
+blue-8475cbdf46-2qhtb          1/1     Running   0          27m
+blue-8475cbdf46-66p2c          1/1     Running   0          27m
+blue-8475cbdf46-zxqj8          1/1     Running   0          27m
+canary-v1-64598c676f-dgbsq     1/1     Running   0          27m
+canary-v1-64598c676f-vt7cg     1/1     Running   0          27m
+canary-v2-5dc9c56687-2t2ks     1/1     Running   0          2m36s
+canary-v2-5dc9c56687-p85cz     1/1     Running   0          2m29s
+debug                          1/1     Running   0          4m22s
+hello-world-794458d64d-xzz5j   1/1     Running   0          27m
+[david@fedora solution]$ 

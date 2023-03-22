@@ -1,0 +1,259 @@
+[david@fedora nd087-c3-deployment-roulette]$ kubectl get service 
+NAME          TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)        AGE
+blue-svc      LoadBalancer   172.20.216.112   a416029b53ebd487b9ddaebffdde922e-2dc9db906ce825d4.elb.us-east-2.amazonaws.com   80:32301/TCP   41m
+canary-svc    ClusterIP      172.20.205.239   <none>                                                                          80/TCP         20s
+hello-world   LoadBalancer   172.20.172.63    a1598bae079fb4c7d83809123a9d413f-abc94bb47223bf25.elb.us-east-2.amazonaws.com   80:31900/TCP   21m
+[david@fedora nd087-c3-deployment-roulette]$ curl 172.20.205.239
+^C
+
+##############################################################################################
+BEFORE CRIPT DEPLOYMENT 
+##############################################################################################
+[david@fedora nd087-c3-deployment-roulette]$ kubectl run debug --rm -i --tty --image nicolaka/netshoot -- /bin/bash
+If you don't see a command prompt, try pressing enter.
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# 
+##############################################################################################
+AFTER SCRIPT DEPLOYMENT 
+##############################################################################################
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 1</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# curl 172.20.205.239
+<html>
+<h1>This is version 2</h1>
+</html>
+debug:~# 
+
